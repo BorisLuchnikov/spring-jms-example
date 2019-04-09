@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+jms:
+  ibm:
+    mq:
+      queue-manager: 'QM1'
+      transport-type: 1
+      channel: 'DEV.ADMIN.SVRCONN'
+      host: 'localhost'
+      port: 1414
+      user: 'admin'
+      password: 'passw0rd'
+
+---
+spring:
+  profiles: test
+
+jms:
+  ibm:
+    mq:
+      queue-manager: 'QM1'
+      transport-type: 1
+      channel: 'DEV.ADMIN.SVRCONN'
+      user: 'admin'
+      password: 'passw0rd'
