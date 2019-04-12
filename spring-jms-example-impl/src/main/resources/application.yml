@@ -11,16 +11,11 @@ jms:
       port: 1414
       user: 'admin'
       password: 'passw0rd'
+  consumer:
+    example:
+      queue: 'SYSTEM.DEFAULT.LOCAL.QUEUE'
+      concurrency: 1
 
 ---
 spring:
   profiles: test
-
-jms:
-  ibm:
-    mq:
-      queue-manager: 'QM1'
-      transport-type: 1
-      channel: 'DEV.ADMIN.SVRCONN'
-      user: 'admin'
-      password: 'passw0rd'

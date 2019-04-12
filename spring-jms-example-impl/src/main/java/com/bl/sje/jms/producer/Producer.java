@@ -1,4 +1,4 @@
-package com.bl.sje.jms;
+package com.bl.sje.jms.producer;
 
 import javax.jms.Destination;
 

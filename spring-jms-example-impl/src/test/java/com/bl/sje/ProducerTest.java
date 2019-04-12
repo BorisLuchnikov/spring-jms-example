@@ -1,6 +1,6 @@
 package com.bl.sje;
 
-import com.bl.sje.jms.Producer;
+import com.bl.sje.jms.producer.Producer;
 import com.ibm.mq.jms.MQQueue;
 import com.ibm.msg.client.wmq.WMQConstants;
 import org.junit.Test;
@@ -19,8 +19,10 @@ public class ProducerTest extends AbstractIbmMqSqlTest {
 
     @Test
     public void test() throws JMSException {
-        MQQueue queue = new MQQueue("queue");
+        MQQueue queue = new MQQueue("SYSTEM.DEFAULT.LOCAL.QUEUE");
         queue.setBooleanProperty(WMQConstants.WMQ_MQMD_WRITE_ENABLED, true);
         producer.sendTo(queue, "my message");
+
+
     }
 }

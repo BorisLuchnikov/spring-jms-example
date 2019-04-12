@@ -24,10 +24,8 @@ public abstract class AbstractIbmMqSqlTest {
 
     private static GenericContainer ibmMq = new GenericContainer("ibmcom/mq")
             .withExposedPorts(1414)
-            .withExposedPorts(9443)
             .withEnv("LICENSE", "accept")
             .withEnv("MQ_QMGR_NAME", "QM1");
-
 
     static {
         ibmMq.start();
@@ -43,7 +41,8 @@ public abstract class AbstractIbmMqSqlTest {
 
         @Override
         public void initialize(ConfigurableApplicationContext applicationContext) {
-            TestPropertyValues.of(springApplicationProperties());
+            TestPropertyValues.of(springApplicationProperties())
+                    .applyTo(applicationContext.getEnvironment());
         }
 
         private static List<String> springApplicationProperties() {

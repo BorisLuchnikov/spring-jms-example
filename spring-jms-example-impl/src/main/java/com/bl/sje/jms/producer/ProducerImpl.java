@@ -1,4 +1,4 @@
-package com.bl.sje.jms;
+package com.bl.sje.jms.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
